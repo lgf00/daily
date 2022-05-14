@@ -1,0 +1,4 @@
+project_config.json
+*.sql
+.env
+node_modules

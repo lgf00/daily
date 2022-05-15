@@ -50,7 +50,7 @@ function App() {
     <div>
       {user
         ? user.init  
-          ? <Setup userDisplayName={user.display_name}/>
+          ? <Setup user={user} handleSignOut={handleSignOut}/>
           : <Home user={user} handleSignOut={handleSignOut}/>
         : <LoggedOut/>
       }

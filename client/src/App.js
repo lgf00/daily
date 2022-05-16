@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import Home from './Components/Home'
 import LoggedOut from './Components/LoggedOut'
-import Setup from './Components/Setup'
+import Settings from './Components/Settings'
 
 function App() {
   const [user, setUser] = useState(
@@ -50,7 +50,7 @@ function App() {
     <div>
       {user
         ? user.init  
-          ? <Setup user={user} handleSignOut={handleSignOut}/>
+          ? <Settings user={user} handleSignOut={handleSignOut}/>
           : <Home user={user} handleSignOut={handleSignOut}/>
         : <LoggedOut/>
       }

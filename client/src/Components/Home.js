@@ -1,23 +1,14 @@
-import { Button, Grid } from '@mui/material'
-import React, { useEffect, useState } from 'react'
+import { Grid } from '@mui/material'
 import Daily from './Daily'
 import Monthly from './Monthly'
+import Time from './Time'
 
 function Home(props) {
     const { user } = props
-    const[ dt, setDt ] = useState(new Date().toLocaleString())
-    
-    useEffect(() => {
-        console.log(dt)
-        let dateInterval = setInterval(() => {
-            setDt(new Date().toLocaleString())
-        }, 1000)
-        
-        return () => clearInterval(dateInterval)
-    }, []);
+    const dt = new Date().toLocaleString()
 
     return (
-        <div classNmae="content">
+        <div className="content">
             <Grid container direction="column" justifyContent="center" alignItems="center">
                 <Grid item>
                     <h1>Good Evening, {user.display_name}</h1>
@@ -30,25 +21,18 @@ function Home(props) {
                         <Daily/>
                     </Grid>
                     <Grid item>
-                        <h1>{dt.split(",")[1]}</h1>
+                        <Time/>
                     </Grid>
                 </Grid>
-                <Grid item container justifyContent="center" alignItems="center" spacing={3}>
-                    <Grid item>
-                        <Monthly/>
-                    </Grid>
-                    <Grid item>
-                        <Monthly/>
-                    </Grid>
-                    <Grid item>
-                        <Monthly/>
-                    </Grid>
-                    <Grid item>
-                        <Monthly/>
-                    </Grid>
-                    <Grid item>
-                        <Monthly/>
-                    </Grid>
+                <Grid item container 
+                 direction="row-reverse" 
+                 justifyContent="center" 
+                >
+                    <Monthly offset={0} theme={user.rating_theme}/>
+                    <Monthly offset={1} theme={user.rating_theme}/>
+                    <Monthly offset={2} theme={user.rating_theme}/>
+                    <Monthly offset={3} theme={user.rating_theme}/>
+                    <Monthly offset={4} theme={user.rating_theme}/>
                 </Grid>
             </Grid>
         </div>

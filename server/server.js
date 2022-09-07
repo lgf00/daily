@@ -93,8 +93,7 @@ app.post("/api/user", async (req, res) => {
                  display_name="${display_name}",\
                  email="${email}",\
                  scale_name="${scale_name}",\
-                 max_points=${max_points},\
-                 rating_theme="${rating_theme}"\
+                 scale_theme="${rating_theme}"\
                  WHERE user_id="${user_id}"`
     db.query(sql, (err, result) => {
         if (err) {

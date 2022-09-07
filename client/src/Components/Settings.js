@@ -10,8 +10,7 @@ function Settings(props) {
         display_name: user.display_name,
         email: user.email,
         scale_name: user.scale_name,
-        max_points: user.max_points,
-        rating_theme: user.rating_theme,
+        scale_theme: user.scale_theme,
     };
     const [settings, updateSettings] = useState(defaultSettings)
     const [disabled, setDisabled] = useState(true)
@@ -69,18 +68,11 @@ function Settings(props) {
                         defaultValue={settings.scale_name}
                         onChange={handleChange}
                     />
-                    <h2>Point Count</h2>
-                    <TextField  
-                        name="max_points"
-                        id="outlined-basic" 
-                        defaultValue={settings.max_points}
-                        onChange={handleChange}
-                    />
-                    <h2>Rating Theme</h2>
+                    <h2>Scale Theme</h2>
                     <Select 
-                        name="rating_theme"
+                        name="scale_theme"
                         id="outlined-basic" 
-                        defaultValue={settings.rating_theme}
+                        defaultValue={settings.scale_theme}
                         onChange={handleChange}
                     >
                         <MenuItem key="default" value="default">Default</MenuItem>

@@ -1,0 +1,18 @@
+.monthly {
+    /* border: 1px solid black; */
+    margin: 5px;
+    width: 250px;
+    max-width: 250px;
+    max-height: 400px;
+}
+
+/* .days {
+    border: 1px solid black;
+} */
+
+.day {
+    width: 25px;
+    height: 25px;
+    border: 1px solid black;
+    margin: 5px;
+}

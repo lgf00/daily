@@ -40,6 +40,32 @@ h1 {
   justify-content: center;
 }
 
+.time {
+  opacity: 100%;
+  transition: all 0.2s linear;
+}
+
+.pause {
+  opacity: 10%;
+}
+
+.increment {
+  height: 100%;
+  width: 100%;
+  opacity: 0%;
+  transition: opacity 0.2s linear;
+  font-size: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}
+
+.increment:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+
 .main {
   width: 362px;
   display: flex;
@@ -77,10 +103,62 @@ h1 {
   width: 362px;
   justify-content: space-between;
 }
+/* 
+.weekanimate {
+  animation: slide ease-in-out 1.5s forwards 1;
+  animation-delay: calc(var(--order) * 0.2s);
+} */
+
+@keyframes slide {
+  from {
+    transform: translateY(-60vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(100%);
+  }
+}
 
 .day {
-  border: 1px solid black;
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  background-color: #363636;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+}
+
+.dayscale {
+  animation: scale ease-out 0.3s forwards 1;
+  animation-delay: calc(var(--scorder) * 0.1s);
+}
+
+.op {
+  opacity: 1;
+  transform: scale(100%);
+}
+
+.dayslide {
+  animation: slide ease-in-out 0.8s forwards 1;
+  animation-delay: calc(var(--slorder) * 0.1s); 
+}
+
+.selected {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FAF9F6;
 }
